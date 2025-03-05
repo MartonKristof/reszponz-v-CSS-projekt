@@ -1,26 +1,21 @@
-.navList{
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.navbar, .footer {
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 
-.navList a{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0);
-}
-
-
-.header{
-    margin: 0 0 0 0;
+.header {
+    margin: 0;
     padding: 15px;
-    background-color:#3d6f91;
+    background-color: #3d6f91;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -33,26 +28,17 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 50px;
 }
 
-.navbar, .footer {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    overflow-x: hidden;
-}
 main {
     background-color: #4a5d68f8;
     color: #fff;
-    height: 100vh;
     display: flex;
-    
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 50px);
+    padding-bottom: 60px;
 }
 
 section {
@@ -61,31 +47,100 @@ section {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.navList a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
 .navList a.active {
     color: #1c3444;
     text-shadow: none;
 }
 
+.ikon {
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
 @media (max-width: 600px) {
     .header {
-        background-color: #ff6347; /* Mobile */
+        background-color: #ff6347;
     }
 
     .navList a.active {
         color: #f5bdb3;
         text-shadow: none;
     }
+
+    .navList {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
     .header {
-        background-color: #4682b4; /* Tablet */
+        background-color: #4682b4;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    p {
+        font-size: 0.9375rem;
     }
 }
 
 @media (min-width: 1025px) {
     .header {
-        background-color: #913d4b; /* Desktop */
+        background-color: #913d4b;
     }
 
     .navList a.active {
