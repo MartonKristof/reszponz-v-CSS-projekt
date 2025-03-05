@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="navList">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="korlatozasok.html">Korlátozások</a></li>
+                <li><a href="tipusai.html">Lekérdezések típusai</a></li>
+                <li><a href="gyakorlas.html">Lekérdezések gyakorlás</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+
+    <h1>Táblákban alkalmazható korlátozások</h1>
+    
+    <h2>PRIMARY KEY</h2>
+    <p>A PRIMARY KEY egyedi azonosítót biztosít egy tábla minden sorának. Egy táblában csak egy PRIMARY KEY lehet.</p>
+    <pre><code>CREATE TABLE Diak (
+    ID INT PRIMARY KEY,
+    Nev VARCHAR(100)
+);</code></pre>
+    
+    <h2>FOREIGN KEY</h2>
+    <p>A FOREIGN KEY egy másik tábla PRIMARY KEY oszlopára hivatkozik, biztosítva az adatintegritást.</p>
+    <pre><code>CREATE TABLE Beiratkozas (
+    DiakID INT,
+    TantargyID INT,
+    FOREIGN KEY (DiakID) REFERENCES Diak(ID)
+);</code></pre>
+    
+    <h2>UNIQUE</h2>
+    <p>Az UNIQUE biztosítja, hogy egy oszlop értékei egyediek legyenek.</p>
+    <pre><code>CREATE TABLE Felhasznalo (
+    ID INT PRIMARY KEY,
+    Email VARCHAR(255) UNIQUE
+);</code></pre>
+    
+    <h2>NOT NULL</h2>
+    <p>A NOT NULL megakadályozza, hogy egy oszlop értéke NULL legyen.</p>
+    <pre><code>CREATE TABLE Termek (
+    ID INT PRIMARY KEY,
+    Nev VARCHAR(100) NOT NULL
+);</code></pre>
+    
+    <h2>DEFAULT</h2>
+    <p>A DEFAULT egy alapértelmezett értéket ad egy oszlopnak, ha nincs megadva érték.</p>
+    <pre><code>CREATE TABLE Felhasznalo (
+    ID INT PRIMARY KEY,
+    RegisztracioDatuma DATE DEFAULT CURRENT_DATE
+);</code></pre>
+    
+    <h2>CHECK</h2>
+    <p>A CHECK egy feltételt állít fel, amelynek az oszlop értékeinek meg kell felelniük.</p>
+    <pre><code>CREATE TABLE Dolgozo (
+    ID INT PRIMARY KEY,
+    Fizetes INT CHECK (Fizetes > 0)
+);</code></pre>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Készítette: Fehér Balázs és Marton Kristóf</p>
+    </footer>
+    <script src="js.js"></script>
+</body>
+</html>
